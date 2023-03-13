@@ -90,6 +90,11 @@ set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
 set shell=nu            " Set vim terminal shell lanuage to nushell
 
+" Fix external command issues when 'set shell=nu' on Windows
+set shellcmdflag=-c
+set shellquote=
+set shellxquote=
+
 " Replace tab with space chars
 set expandtab
 set tabstop=4
