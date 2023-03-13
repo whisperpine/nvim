@@ -14,4 +14,4 @@ set ignorecase          " Ignore upper case or lower case when searching
 set smartcase           " Override 'ignorecase' if the search pattern contains upper case chars.
 set nohls               " Don't highlight searching result
 set clipboard^=unnamed,unnamedplus  " Share system clipboard
-
+set fileformat=unix     " Set end of line style to LF
