@@ -13,6 +13,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 " Delete, change and add surroundings
 Plug 'tpope/vim-surround'
+" Nginx filetype syntax highlight
+Plug 'chr4/nginx.vim'
 
 call plug#end()
 
