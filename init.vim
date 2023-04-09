@@ -30,9 +30,9 @@ if has("autocmd")
 endif
 
 
-" Override yaml indent rule
-autocmd Filetype yaml setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd Filetype xml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+" Override indent rule for specific filetype
+"autocmd Filetype yaml setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Configure lightline plugin
 let g:lightline = { 'colorscheme': 'gruvbox' }
