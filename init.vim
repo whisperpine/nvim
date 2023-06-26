@@ -62,8 +62,8 @@ syntax on               " Enable syntax highlighting
 filetype plugin on      " Enable filetype-specific plugin
 filetype indent off     " Disable filetype-specific indent
 
-if has('termguicolors')
-  set termguicolors
+if $TERM_PROGRAM != "Apple_Terminal"
+    set termguicolors
 endif
 " Apply dark theme in any color scheme
 set background=dark
