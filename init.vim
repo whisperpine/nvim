@@ -1,10 +1,10 @@
-" Vim pluggin manager requirement:
+" Vim plugin manager requirement:
 " https://github.com/junegunn/vim-plug
 
 call plug#begin()
 
-" A scheme called gruvbox
-Plug 'morhetz/gruvbox'
+" A scheme called gruvbox-material
+Plug 'sainnhe/gruvbox-material'
 " Light weight airline
 Plug 'itchyny/lightline.vim'
 " To show indent line
@@ -31,7 +31,6 @@ endif
 
 
 " Override indent rule for specific filetype
-"autocmd Filetype yaml setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " 0 -> blinking block.
@@ -46,7 +45,7 @@ let &t_EI = "\e[2 q"    " Set cursor shape to steady block inside NORMAL mode
 let &t_SR = "\e[4 q"    " Set cursor shape to steady block inside REPLACE mode
 
 " Configure lightline plugin
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = { 'colorscheme': 'gruvbox_material' }
 
 " Configure indentLine plugin
 let g:indentLine_color_term = 239   " Set color
@@ -54,18 +53,32 @@ let g:vim_json_conceal = 0          " Avoid char hidden in json
 let g:markdown_syntax_conceal = 0   " Avoid char hidden in markdown
 
 " Configure vim-better-whitespace plugin
-let g:better_whitespace_enabled=1
-let g:strip_whitespace_on_save=1
-let g:strip_whitespace_confirm=0
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
 syntax on               " Enable syntax highlighting
 filetype plugin on      " Enable filetype-specific plugin
 filetype indent off     " Disable filetype-specific indent
 
-" To apply gruvbox scheme
-colorscheme gruvbox
-" Remove background color.
-highlight Normal guibg=NONE ctermbg=NONE
+if has('termguicolors')
+  set termguicolors
+endif
+" Apply dark theme in any color scheme
+set background=dark
+" Available values: 'material', 'mix', 'original'
+let g:gruvbox_material_foreground = 'material'
+" Remove background color
+let g:gruvbox_material_transparent_background = 2
+" Disable italic in comment
+let g:gruvbox_material_disable_italic_comment = 1
+" Enabling this option will reduce loading time
+let g:gruvbox_material_better_performance = 1
+" Set colorscheme
+colorscheme gruvbox-material
+
+" Vim native way to remove background color.
+"highlight Normal guibg=NONE ctermbg=NONE
 
 set autoindent          " Inherit the indent format when changing line
 set smartindent         " React to the syntax or style of the code
@@ -88,7 +101,7 @@ set laststatus=2        " Always show status line
 set cul                 " Highlight the line where the cursor is at
 set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
-set shell=nu            " Set vim terminal shell lanuage to nushell
+set shell=nu            " Set vim terminal shell language to nushell
 
 " Fix external command issues when 'set shell=nu' on Windows
 set shellcmdflag=-c
