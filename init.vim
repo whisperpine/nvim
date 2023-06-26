@@ -34,9 +34,6 @@ endif
 "autocmd Filetype yaml setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-" Configure lightline plugin
-let g:lightline = { 'colorscheme': 'gruvbox' }
-
 " 0 -> blinking block.
 " 1 -> blinking block (default).
 " 2 -> steady block.
@@ -67,6 +64,8 @@ filetype indent off     " Disable filetype-specific indent
 
 " To apply gruvbox scheme
 colorscheme gruvbox
+" Remove background color.
+highlight Normal guibg=NONE ctermbg=NONE
 
 set autoindent          " Inherit the indent format when changing line
 set smartindent         " React to the syntax or style of the code
@@ -76,7 +75,6 @@ set smartcase           " Override 'ignorecase' if the search pattern contains u
 set incsearch           " highlight when searching
 set nohls               " Don't highlight searching result
 
-set background=dark     " Apply dark theme in any color scheme
 set number              " Show line number
 set encoding=utf-8      " Avoid error when displaying Chinese
 set shortmess-=S        " Show search results in [x/y] format
