@@ -9,7 +9,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
 " To show indent line
 Plug 'Yggdroot/indentLine'
-" Auto remove white spaces
+" Auto remove redundant white spaces
 Plug 'ntpeters/vim-better-whitespace'
 " Delete, change and add surroundings
 Plug 'tpope/vim-surround'
@@ -62,6 +62,7 @@ syntax on               " Enable syntax highlighting
 filetype plugin on      " Enable filetype-specific plugin
 filetype indent off     " Disable filetype-specific indent
 
+" Configure colorscheme
 if $TERM_PROGRAM != "Apple_Terminal"
     set termguicolors
 endif
@@ -77,8 +78,8 @@ let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_better_performance = 1
 " Override scheme color
 let g:gruvbox_material_colors_override = {
-\ 'fg0':    ['#b7b7b7', '223'],
-\ 'fg1':    ['#b7b7b7', '223'],
+\ 'fg0':    ['#c1c1c1', '223'],
+\ 'fg1':    ['#c1c1c1', '223'],
 \ 'grey1':  ['#838383', '245'],
 \ 'grey2':  ['#838383', '245'],
 \ 'bg_dim': ['#252525', '233'],
@@ -96,7 +97,7 @@ let g:gruvbox_material_colors_override = {
 " Set colorscheme
 colorscheme gruvbox-material
 
-" Vim native way to remove background color.
+" Vim native way to remove background color
 "highlight Normal guibg=NONE ctermbg=NONE
 
 set autoindent          " Inherit the indent format when changing line
