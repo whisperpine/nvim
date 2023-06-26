@@ -56,6 +56,7 @@ let g:markdown_syntax_conceal = 0   " Avoid char hidden in markdown
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
+let g:better_whitespace_guicolor = '#ea6962'
 
 syntax on               " Enable syntax highlighting
 filetype plugin on      " Enable filetype-specific plugin
@@ -69,11 +70,29 @@ set background=dark
 " Available values: 'material', 'mix', 'original'
 let g:gruvbox_material_foreground = 'material'
 " Remove background color
-let g:gruvbox_material_transparent_background = 2
+let g:gruvbox_material_transparent_background = 1
 " Disable italic in comment
 let g:gruvbox_material_disable_italic_comment = 1
 " Enabling this option will reduce loading time
 let g:gruvbox_material_better_performance = 1
+" Override scheme color
+let g:gruvbox_material_colors_override = {
+\ 'fg0':    ['#b7b7b7', '223'],
+\ 'fg1':    ['#b7b7b7', '223'],
+\ 'grey1':  ['#838383', '245'],
+\ 'grey2':  ['#838383', '245'],
+\ 'bg_dim': ['#252525', '233'],
+\ 'bg0':    ['#323232', '236'],
+\ 'bg1':    ['#3c3c3c', '237'],
+\ 'bg2':    ['#3c3c3c', '237'],
+\ 'bg3':    ['#505050', '239'],
+\ 'bg4':    ['#505050', '239'],
+\ 'bg5':    ['#666666', '241'],
+\ 'bg_statusline1': ['#3c3c3c',   '237'],
+\ 'bg_statusline2': ['#464646',   '237'],
+\ 'bg_statusline3': ['#5b5b5b',   '241'],
+\ }
+
 " Set colorscheme
 colorscheme gruvbox-material
 
