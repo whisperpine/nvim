@@ -5,6 +5,9 @@
 
 Vim pluggin manager [vim-plug](https://github.com/junegunn/vim-plug) is required.
 
+[Powerline Font](https://github.com/powerline/powerline) is needed in your terminal.
+In this case [Cascadia Mono PL](https://github.com/microsoft/cascadia-code) is a good choice.
+
 ## Suggestions
 [Nushell](https://www.nushell.sh/) is recommended, or you need to slightly modify [init.vim](./init.vim).
 
