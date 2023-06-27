@@ -45,7 +45,13 @@ let &t_EI = "\e[2 q"    " Set cursor shape to steady block inside NORMAL mode
 let &t_SR = "\e[4 q"    " Set cursor shape to steady block inside REPLACE mode
 
 " Configure lightline plugin
-let g:lightline = { 'colorscheme': 'gruvbox_material' }
+" \ 'separator': { 'left': '', 'right': '' },
+" \ 'separator': { 'left': '', 'right': '' },
+let g:lightline = {
+\ 'colorscheme': 'gruvbox_material',
+\ 'separator': { 'left': '', 'right': '' },
+\ 'subseparator': { 'left': '\\', 'right': '/' },
+\ }
 
 " Configure indentLine plugin
 let g:indentLine_color_term = 239   " Set color
@@ -78,8 +84,8 @@ let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_better_performance = 1
 " Override scheme color
 let g:gruvbox_material_colors_override = {
-\ 'fg0':    ['#c1c1c1', '223'],
-\ 'fg1':    ['#c1c1c1', '223'],
+\ 'fg0':    ['#cacaca', '223'],
+\ 'fg1':    ['#cacaca', '223'],
 \ 'grey1':  ['#838383', '245'],
 \ 'grey2':  ['#838383', '245'],
 \ 'bg_dim': ['#252525', '233'],
