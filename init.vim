@@ -47,10 +47,10 @@ let &t_SR = "\e[4 q"    " Set cursor shape to steady block inside REPLACE mode
 " Configure lightline plugin
 " \ 'separator': { 'left': '', 'right': '' },
 " \ 'separator': { 'left': '', 'right': '' },
+" \ 'separator': { 'left': '', 'right': '' },
+" \ 'subseparator': { 'left': '\\', 'right': '/' },
 let g:lightline = {
 \ 'colorscheme': 'gruvbox_material',
-\ 'separator': { 'left': '', 'right': '' },
-\ 'subseparator': { 'left': '\\', 'right': '/' },
 \ }
 
 " Configure indentLine plugin
