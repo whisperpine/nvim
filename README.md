@@ -5,6 +5,7 @@
 
 Vim pluggin manager [vim-plug](https://github.com/junegunn/vim-plug) is required.
 
+
 ## Recommendations
 [Nushell](https://www.nushell.sh/) is recommended, or you need to slightly modify [init.vim](./init.vim).
 
@@ -15,7 +16,15 @@ For alternative ways to install Neovim, you may choose [Homebrew](https://brew.s
 [Powerline Font](https://github.com/powerline/powerline) is recommended to use in your terminal.
 In this case [Cascadia Mono PL](https://github.com/microsoft/cascadia-code) is a good choice.
 
-## Vscode
+## Use Cases
+
+### Neovim
+
+With [vim-plug](https://github.com/junegunn/vim-plug) already installed, just copy and paste [init.vim](init.vim) and run `:PlugInstall` inside neovim.
+
+If plugins are not suitable in your case, [plug-free.vim](plug-free.vim) is an alternative.
+
+### Vscode
 To use with vscode, modify vscode neovim plugin settings:
 
 Vscode-neovim > Neovim Init Vim Paths
