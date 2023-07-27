@@ -1,10 +1,12 @@
 # README
 
-## Prerequisites
 [Neovim](https://neovim.io/) config files for standalone usage or together with vscode.
+
+## Prerequisites
 
 Vim pluggin manager [vim-plug](https://github.com/junegunn/vim-plug) is required.
 
+[win32yank](https://github.com/equalsraf/win32yank) is required on Windows to fix line ending issues.
 
 ## Recommendations
 [Nushell](https://www.nushell.sh/) is recommended, or you need to slightly modify [init.vim](./init.vim).

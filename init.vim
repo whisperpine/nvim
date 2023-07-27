@@ -153,3 +153,18 @@ set backspace=indent,eol,start
 " Share system clipboard
 set clipboard+=unnamedplus
 
+if has("win32")
+    let g:clipboard = {
+    \   'name': 'wsl-clip',
+    \	'copy': {
+    \		'+': 'win32yank.exe -i',
+    \		'*': 'win32yank.exe -i',
+    \	},
+    \	'paste': {
+    \		'+': 'win32yank.exe -o --lf',
+    \		'*': 'win32yank.exe -o --lf',
+    \	},
+    \	'cache_enabled': 0,
+    \ }
+endif
+

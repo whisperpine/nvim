@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Cascadia"
-    ]
+    ],
+    "files.readonlyInclude": {
+        "LICENSE": true,
+    }
 }
