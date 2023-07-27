@@ -122,7 +122,7 @@ set showcmd             " Show command in the bottom right corner
 set timeoutlen=200      " Set timeout to 200 millisecond
 set ttimeoutlen=5       " time in milliseconds that vim wait after pressing <esc>
 set laststatus=2        " Always show status line
-set cul                 " Highlight the line where the cursor is at
+set cursorline          " Highlight the line where the cursor is at
 set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
 set shell=nu            " Set vim terminal shell language to nushell
@@ -144,5 +144,5 @@ set softtabstop=4
 set backspace=indent,eol,start
 
 " Share system clipboard
-set clipboard^=unnamed,unnamedplus
+set clipboard+=unnamedplus
 
