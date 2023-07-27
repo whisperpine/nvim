@@ -1,8 +1,12 @@
 {
     "cSpell.words": [
-        "Cascadia"
+        "Cascadia",
+        "mklink"
     ],
     "files.readonlyInclude": {
         "LICENSE": true,
+    },
+    "files.associations": {
+        "LICNESE": "plain text"
     }
 }
