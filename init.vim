@@ -125,8 +125,15 @@ set laststatus=2        " Always show status line
 set cursorline          " Highlight the line where the cursor is at
 set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
-set shell=nu            " Set vim terminal shell language to nushell
 set mouse=              " Disable mouse in every vim mode
+
+if has("win32")
+    " vim-plug only works with powershell in windows
+    set shell=powershell
+else
+    " Set vim terminal shell language to nushell
+    set shell=nu
+endif
 
 " Fix external command issues when 'set shell=nu' on Windows
 set shellcmdflag=-c
