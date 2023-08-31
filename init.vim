@@ -13,6 +13,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 " Delete, change and add surroundings
 Plug 'tpope/vim-surround'
+" Comment stuff out.
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -119,7 +121,7 @@ set nowrap              " Don't wrap lines when it's longer than the window widt
 set noshowmode          " No need to show mode because of lightline plugin
 set noshowmatch         " Don't hightlight bracket pair
 set showcmd             " Show command in the bottom right corner
-set timeoutlen=200      " Set timeout to 200 millisecond
+set timeoutlen=500      " Set timeout to 200 millisecond
 set ttimeoutlen=5       " time in milliseconds that vim wait after pressing <esc>
 set laststatus=2        " Always show status line
 set cursorline          " Highlight the line where the cursor is at
