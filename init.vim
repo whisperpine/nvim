@@ -16,7 +16,33 @@ Plug 'tpope/vim-surround'
 " Comment stuff out.
 Plug 'tpope/vim-commentary'
 
+if has("win32")
+    " Auto switch input method.
+    Plug 'lyokha/vim-xkbswitch'
+endif
+
 call plug#end()
+
+" Windows platform specific settings
+if has("win32")
+    " Enable vim-xkbswitch plugin
+    let g:XkbSwitchEnabled = 1
+    " Set libxkbswitch64.dll file path
+    let g:XkbSwitchLib = stdpath('config') . '/libxkbswitch64.dll'
+    " Use win32yank to copy and past
+    let g:clipboard = {
+    \   'name': 'wsl-clip',
+    \	'copy': {
+    \		'+': 'win32yank.exe -i',
+    \		'*': 'win32yank.exe -i',
+    \	},
+    \	'paste': {
+    \		'+': 'win32yank.exe -o --lf',
+    \		'*': 'win32yank.exe -o --lf',
+    \	},
+    \	'cache_enabled': 0,
+    \ }
+endif
 
 
 " Enable 'Enter' key to select auto completed option
@@ -24,14 +50,13 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 " Open file at the same place where last time left off
-if has("autocmd")
-    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal! g'\"" | endif
-endif
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+\ | exe "normal! g'\"" | endif
 
 
 " Override indent rule for specific filetype
 autocmd Filetype xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 
 " 0 -> blinking block.
 " 1 -> blinking block (default).
@@ -121,8 +146,8 @@ set nowrap              " Don't wrap lines when it's longer than the window widt
 set noshowmode          " No need to show mode because of lightline plugin
 set noshowmatch         " Don't hightlight bracket pair
 set showcmd             " Show command in the bottom right corner
-set timeoutlen=500      " Set timeout to 200 millisecond
-set ttimeoutlen=5       " time in milliseconds that vim wait after pressing <esc>
+set timeoutlen=500      " Time to wait for a mapped sequence to complete.
+set ttimeoutlen=5       " Time in milliseconds that vim wait after pressing <esc>
 set laststatus=2        " Always show status line
 set cursorline          " Highlight the line where the cursor is at
 set scrolloff=3         " Cursor will always be 3 lines above the window edge
@@ -155,18 +180,4 @@ set backspace=indent,eol,start
 " Share system clipboard
 set clipboard+=unnamedplus
 
-if has("win32")
-    let g:clipboard = {
-    \   'name': 'wsl-clip',
-    \	'copy': {
-    \		'+': 'win32yank.exe -i',
-    \		'*': 'win32yank.exe -i',
-    \	},
-    \	'paste': {
-    \		'+': 'win32yank.exe -o --lf',
-    \		'*': 'win32yank.exe -o --lf',
-    \	},
-    \	'cache_enabled': 0,
-    \ }
-endif
 
