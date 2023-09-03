@@ -16,20 +16,25 @@ Plug 'tpope/vim-surround'
 " Comment stuff out.
 Plug 'tpope/vim-commentary'
 
-if has("win32")
-    " Auto switch input method.
-    Plug 'lyokha/vim-xkbswitch'
-endif
-
 call plug#end()
 
-" Windows platform specific settings
-if has("win32")
-    " Enable vim-xkbswitch plugin
-    let g:XkbSwitchEnabled = 1
-    " Set libxkbswitch64.dll file path
-    let g:XkbSwitchLib = stdpath('config') . '/libxkbswitch64.dll'
-    " Use win32yank to copy and past
+
+" Auto swith to English input method on InsertLeave
+if has('win32')
+    let imselect = stdpath('config') . '\windows\im-select.exe'
+    autocmd InsertLeave * :silent exe '!'.imselect.' 1033'
+elseif has('wsl')
+    let username = trim(system('whoami'))
+    let imselect = '/mnt/c/Users/'. username
+        \. '/AppData/Local/nvim/windows/im-select.exe'
+    autocmd InsertLeave * :silent exe '!'.imselect.' 1033'
+elseif has('mac')
+    autocmd InsertLeave * :silent exe '!im-select com.apple.keylayout.ABC'
+endif
+
+
+" Use win32yank to copy and past on Windows
+if has('win32')
     let g:clipboard = {
     \   'name': 'wsl-clip',
     \	'copy': {
@@ -94,7 +99,7 @@ filetype plugin on      " Enable filetype-specific plugin
 filetype indent off     " Disable filetype-specific indent
 
 " Configure colorscheme
-if $TERM_PROGRAM != "Apple_Terminal"
+if $TERM_PROGRAM != 'Apple_Terminal'
     set termguicolors
 endif
 " Apply dark theme in any color scheme
@@ -129,7 +134,7 @@ let g:gruvbox_material_colors_override = {
 colorscheme gruvbox-material
 
 " Vim native way to remove background color
-"highlight Normal guibg=NONE ctermbg=NONE
+" highlight Normal guibg=NONE ctermbg=NONE
 
 set autoindent          " Inherit the indent format when changing line
 set smartindent         " React to the syntax or style of the code
@@ -154,7 +159,7 @@ set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
 set mouse=              " Disable mouse in every vim mode
 
-if has("win32")
+if has('win32')
     " vim-plug only works with powershell in windows
     set shell=powershell
 else
@@ -179,5 +184,3 @@ set backspace=indent,eol,start
 
 " Share system clipboard
 set clipboard+=unnamedplus
-
-
