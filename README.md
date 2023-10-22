@@ -4,8 +4,7 @@
 
 ## Prerequisites
 
-[Git LFS](https://git-lfs.com/) must be installed before cloning this repo.
-
+[Git LFS](https://git-lfs.com/) must be installed before cloning this repo.\
 Vim pluggin manager [vim-plug](https://github.com/junegunn/vim-plug) is required.
 
 ## Platform Specifics
@@ -59,8 +58,13 @@ If plugins are not suitable in your case, [plug-free.vim](plug-free.vim) is an a
 For example you may create a symbolic link like this:
 
 ```sh
-ln -s ~/.config/nvim/init.vim ~/.vimrc       # Linux and macOS
-mklink ~/.vimrc AppData/Local/nvim/init.vim  # Windows
+# Linux and macOS
+ln -s ~/.config/nvim/init.vim ~/.vimrc
+```
+
+```bat
+REM Windows
+mklink ~\.vimrc ~\AppData\Local\nvim\init.vim
 ```
 
 ### Vscode
