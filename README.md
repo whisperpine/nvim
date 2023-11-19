@@ -69,5 +69,5 @@ mklink ~\.vimrc ~\AppData\Local\nvim\init.vim
 
 ### Vscode
 
-To use with vscode, modify vscode neovim plugin settings: \
-Vscode-neovim > Neovim Init Vim Paths
+To be compatible with vscode, modify [VSCode Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) extension settings:\
+*Vscode-neovim > Neovim Init Vim Paths*
