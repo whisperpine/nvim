@@ -24,22 +24,8 @@ elseif has('mac')
     autocmd InsertLeave * :silent exe '!im-select com.apple.keylayout.ABC'
 endif
 
-" Windows platform specific settings
-if has('win32')
-    " Use win32yank to copy and past
-    let g:clipboard = {
-    \   'name': 'wsl-clip',
-    \	'copy': {
-    \		'+': 'win32yank.exe -i',
-    \		'*': 'win32yank.exe -i',
-    \	},
-    \	'paste': {
-    \		'+': 'win32yank.exe -o --lf',
-    \		'*': 'win32yank.exe -o --lf',
-    \	},
-    \	'cache_enabled': 0,
-    \ }
-endif
+" Use vscode clipbard API
+let g:clipboard = g:vscode_clipboard
 
 set ignorecase              " Ignore upper case or lower case when searching
 set smartcase               " Override 'ignorecase' if the search pattern contains upper case chars
