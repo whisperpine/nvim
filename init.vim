@@ -15,6 +15,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 " Comment stuff out.
 Plug 'tpope/vim-commentary'
+" Text objects enhancement
+Plug 'wellle/targets.vim'
 
 call plug#end()
 

@@ -8,6 +8,8 @@ call plug#begin()
 
 " Delete, change and add surroundings
 Plug 'tpope/vim-surround'
+" Text objects enhancement
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
