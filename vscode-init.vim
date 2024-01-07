@@ -34,3 +34,4 @@ set smartcase               " Override 'ignorecase' if the search pattern contai
 set nohls                   " Don't highlight searching result
 set fileformat=unix         " Set end of line style to LF
 set clipboard+=unnamedplus  " Share system clipboard
+set shellslash              " Use slash instead of backslash in paths
