@@ -50,6 +50,7 @@ set scrolloff=3         " Cursor will always be 3 lines above the window edge
 set fileformat=unix     " Set end of line style to LF
 set shell=nu            " Set vim terminal shell language to nushell
 set mouse=              " Disable mouse in every vim mode
+set shellslash          " Use slash instead of backslash in paths
 
 " Replace tab with space chars
 set expandtab
