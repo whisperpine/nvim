@@ -67,7 +67,7 @@ REM Windows
 mklink ~\.vimrc ~\AppData\Local\nvim\init.vim
 ```
 
-### Vscode
+### VSCode
 
 To be compatible with vscode, modify [VSCode Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) extension settings:\
 *Vscode-neovim > Neovim Init Vim Paths*

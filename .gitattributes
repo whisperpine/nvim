@@ -1,5 +1,4 @@
-## Set default behavior to never normalize line endings.
-* text=false
+* text=auto eol=lf
 
 ## Git LFS ##
 ## Image

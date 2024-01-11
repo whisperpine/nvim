@@ -1,13 +1,13 @@
 {
+    "files.readonlyInclude": {
+        "LICENSE": true,
+    },
+    "files.associations": {
+        "LICENSE": "plaintext"
+    },
     "cSpell.words": [
         "Cascadia",
         "daipeihust",
         "mklink"
     ],
-    "files.readonlyInclude": {
-        "LICENSE": true,
-    },
-    "files.associations": {
-        "LICNESE": "plain text"
-    }
 }
