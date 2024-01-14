@@ -20,25 +20,31 @@ Plug 'wellle/targets.vim'
 
 call plug#end()
 
+
+" Get nvim diretory path in all platforms
+if has('windows')
+    let s:nvim_dir = expand('~/AppData/Local/nvim')
+elseif has('mac') || has('linux')
+    let s:nvim_dir = expand('~/.config/nvim')
+endif
+
 " Source ./plug-free.vim
-exe 'source ' . expand('<sfile>:p:h') . '/plug-free.vim'
+exe 'source '.s:nvim_dir.'/plug-free.vim'
 
 " Auto swith to English input method on InsertLeave
-if has('win32')
-    let imselect = stdpath('config') . '\windows\im-select.exe'
+if has('windows')
+    let imselect = s:nvim_dir.'/windows/im-select.exe'
     autocmd InsertLeave * :silent exe '!'.imselect.' 1033'
 elseif has('wsl')
-    let username = trim(system('whoami'))
-    let imselect = '/mnt/c/Users/'. username
+    let imselect = '/mnt/c/Users/' . trim(system('whoami'))
         \. '/AppData/Local/nvim/windows/im-select.exe'
     autocmd InsertLeave * :silent exe '!'.imselect.' 1033'
 elseif has('mac')
     autocmd InsertLeave * :silent exe '!im-select com.apple.keylayout.ABC'
 endif
 
-
 " Use win32yank to copy and past on Windows
-if has('win32')
+if has('windows')
     let g:clipboard = {
     \   'name': 'wsl-clip',
     \	'copy': {
