@@ -33,7 +33,7 @@ endif
 " Vim native way to remove background color
 " highlight Normal guibg=NONE ctermbg=NONE
 
- set background=dark     " Apply dark theme in any color scheme
+set background=dark     " Apply dark theme in any color scheme
 
 set autoindent          " Inherit the indent format when changing line
 set smartindent         " React to the syntax or style of the code
